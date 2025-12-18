@@ -185,10 +185,7 @@
             `;
 
             const startTime = Date.now();
-            const minDuration = 500;
-
-            // Animate to 50%
-            animateProgress(convertBtn, startTime, minDuration, 50, BUTTON_COLOR);
+            const minDuration = 750;
 
             const reader = new FileReader();
             reader.onload = async function(e) {
@@ -199,7 +196,7 @@
                 // Animate to 100%
                 animateProgress(convertBtn, startTime, minDuration, 100, BUTTON_COLOR);
 
-                // Wait for minimum duration
+                // Wait for minimum duration to complete
                 const elapsedTime = Date.now() - startTime;
                 if (elapsedTime < minDuration) {
                     await sleep(minDuration - elapsedTime);
@@ -272,10 +269,7 @@
             `;
 
             const startTime = Date.now();
-            const minDuration = 500;
-
-            // Animate to 50%
-            animateProgress(decodeBtn, startTime, minDuration, 50, BUTTON_COLOR);
+            const minDuration = 750;
 
             try {
                 // Check if it's a data URL or just base64
@@ -307,7 +301,7 @@
                     // Animate to 100%
                     animateProgress(decodeBtn, startTime, minDuration, 100, BUTTON_COLOR);
 
-                    // Wait for minimum duration
+                    // Wait for minimum duration to complete
                     const elapsedTime = Date.now() - startTime;
                     if (elapsedTime < minDuration) {
                         await sleep(minDuration - elapsedTime);
